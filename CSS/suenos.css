@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Baskervville", serif;
+    background: radial-gradient(circle at top, #1f2937 0, #020617 55%);
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2rem;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.logo {
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: #6366f1;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 0.15rem;
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-list a:hover {
+    color: #a5b4fc;
+}
+
+.nav-list a:active {
+    transform: scale(0.96);
+}
+
+body[data-page="suenos"] .nav-list a[href="suenos.html"] {
+    color: #6366f1;
+    border-bottom: 2px solid #6366f1;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #6366f1, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.page-header p {
+    color: #cbd5f5;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.sueños-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.sueño-card {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.sueño-card:hover {
+    transform: translateY(-10px);
+    border-color: #6366f1;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+}
+
+.sueño-card.grande {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.sueño-imagen {
+    height: 200px;
+    overflow: hidden;
+}
+
+.sueño-card.grande .sueño-imagen {
+    height: 100%;
+}
+
+.sueño-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.sueño-card:hover .sueño-imagen img {
+    transform: scale(1.1);
+}
+
+.sueño-content {
+    padding: 2rem;
+}
+
+.sueño-card.grande .sueño-content {
+    padding: 2.5rem;
+}
+
+.sueño-content h3 {
+    color: #6366f1;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sueño-content p {
+    color: #cbd5f5;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.meta-info {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tiempo, .dificultad {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.mentalidad-section {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(165, 180, 252, 0.1));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.mentalidad-content h2 {
+    color: #6366f1;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.mentalidad-content p {
+    color: #cbd5f5;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.frase-destacada {
+    background: rgba(15, 23, 42, 0.8);
+    border-left: 3px solid #a5b4fc;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.frase-destacada p {
+    color: #a5b4fc;
+    font-style: normal;
+    margin: 0;
+}
+
+.plan-accion {
+    margin: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    color: #6366f1;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease;
+}
+
+.pasos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.paso-card {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.paso-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+}
+
+.paso-numero {
+    background: #6366f1;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+}
+
+.paso-card h4 {
+    color: #a5b4fc;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.paso-card p {
+    color: #cbd5f5;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    background: #020617;
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    .sueños-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sueño-card.grande {
+        grid-template-columns: 1fr;
+    }
+
+    .pasos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
